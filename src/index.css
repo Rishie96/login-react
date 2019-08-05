@@ -109,6 +109,7 @@ label {
 }
 
 .message-box {
+  animation: blink 2s linear infinite;
   color: rgb(173, 26, 0);
   display: none;
   font-family: Ailerons;
@@ -144,4 +145,20 @@ label {
   color: rgb(190, 190, 190);
   font-style: italic;
   text-align: left;
+}
+
+@keyframes blink {
+    0%{     color: rgb(218, 18, 18);    }
+    25%{    opacity: 0.2; }
+    50%{    opacity: 0.6; }
+    75%{    opacity: 0.8;  }
+    100%{   color: rgb(218, 18, 18);    }
+}
+
+@keyframes blinkGreen {
+  0%{     color: rgb(0, 138, 18);    }
+  25%{    opacity: 0.2; }
+  50%{    opacity: 0.6; }
+  75%{    opacity: 0.8;  }
+  100%{   color: rgb(0, 138, 18);    }
 }

@@ -29,9 +29,7 @@ export default class  App extends Component {
     if(email === '' || password === '') {
       window['message-box'].style.display = 'block';
       if(email === '')
-        window['message-box'].innerHTML = 'Email cannot be empty';
-      else if(password === '')
-        window['message-box'].innerHTML = 'Password cannot be empty';      
+        window['message-box'].innerHTML = 'All Fields Mandatory';      
       else window['message-box'].innerHTML = 'Authentication Failed';
       event.preventDefault();
       return;
@@ -79,8 +77,8 @@ export default class  App extends Component {
       let data = name.value+':'+password.value+':'+dob.value;
       sessionStorage.setItem(email.value, data);
       window['message-box'].style.display = 'block';
-      window['message-box'].style.color = 'green';
-      window['message-box'].innerHTML = 'Registered.';
+      window['message-box'].style.animation = 'blinkGreen 2s linear infinite';
+      window['message-box'].innerHTML = 'Registered, please wait';
       window['signup'].disabled = true;
       setTimeout(() => {        
         window.location.replace('/');
