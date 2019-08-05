@@ -1,13 +1,147 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: Blanka;
+  src: url('Blanka.otf') format('opentype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  font-family: Ailerons;
+  src: url('Ailerons.otf') format('opentype');
+}
+
+body {
+  background-color: rgb(24, 24, 24);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+input {
+  background: inherit;
+  border: none;
+  border-bottom: 0.2px solid rgb(61, 61, 61);
+  color: white;
+  font-family: monospace;
+  font-size: 0.8vw;  
+  height: 2.4vh;
+  letter-spacing: 0.2vw;
+  margin-top: 12%;
+  outline: none;
+  text-align: center;
+  width: 23vw;
+}
+
+label {  
+  font-family: Ailerons;
+  font-size: 0.8vw;
+  letter-spacing: 0.2vw;
+}
+
+.button-back {
+  background: inherit;
+  border: none;
+  color: rgb(20, 99, 202);
+  font-family: Ailerons;
+  font-size: 1vw;
+  margin-top: 4vh;
+  outline: none;
+  padding: 0.4vw;
+  width: fit-content
+}
+
+.button-login {
+  background: inherit;
+  border: 0.2px solid rgb(114, 114, 114);
+  color: rgb(192, 192, 192);
+  font-family: Ailerons;
+  font-size: 1vw;
+  margin-top: 4vh;
+  margin-right: 1vw;
+  outline: none;
+  padding: 0.4vw;
+  width: 23vw;
+}
+
+.button-signup {
+  background: inherit;
+  border: none;
+  color: rgb(20, 99, 202);
+  font-family: Ailerons;
+  font-size: 1vw;
+  margin-top: 4vh;
+  outline: none;
+  padding: 0.4vw;
+  width: fit-content
+}
+
+.container-login {
+  color: rgb(219, 219, 219);
+  letter-spacing: 2.2vw;
+  margin-top: 20vh;
+  margin-left: 40%;
+  text-align: center;
+  width: 25%;
+}
+
+.container-main {
+  height: 98vh;
+  font-family: Blanka;
+}
+
+.container-welcome {
+  font-size: 2vw;
+
+}
+
+.login-fields {
+
+}
+
+.login-text {
+  font-size: 2vw;
+}
+
+.message-box {
+  color: rgb(173, 26, 0);
+  display: none;
+  font-family: Ailerons;
+  font-size: 0.8vw;
+  height: 2vh;
+  letter-spacing: 0.1vw;
+}
+
+.signup-link {
+  color: white;
+  float: left;
+  font-family: Ailerons;
+  font-size: 1vw;
+  letter-spacing: 0.18vw;
+}
+
+.signup-link-main {
+  color: rgb(22, 94, 175);
+  letter-spacing: 0.1vw;
+}
+
+.welcome-container {
+  font-size: 1.5vw;
+  margin-left: -15vw;
+  width: 50vw;
+}
+
+.welcome-user {
+  color: rgb(39, 39, 39);
+}
+
+::placeholder {
+  color: rgb(190, 190, 190);
+  font-style: italic;
+  text-align: left;
 }
