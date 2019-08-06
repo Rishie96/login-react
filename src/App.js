@@ -63,7 +63,7 @@ export default class  App extends Component {
 
   onLogoutHandler = () => {
     sessionStorage.removeItem('login');
-    window.location.replace('/login-react');
+    window.location.replace('/');
   }
 
   onSignUpHandler = (event) => {
@@ -106,7 +106,7 @@ export default class  App extends Component {
       window['message-box'].innerHTML = 'Registered, please wait';
       window['signup'].disabled = true;
       setTimeout(() => {        
-        window.location.replace('/login-react');
+        window.location.replace('/');
       }, 3000)
       currentPage = 0;
     }    
@@ -118,7 +118,7 @@ export default class  App extends Component {
       <Router>
         <div className="container-main">
           <div className="container-login">
-            <Route exact path="/login-react" component={Login} data={this.state.data} />       
+            <Route exact path="/" component={Login} data={this.state.data} />       
             <Route path="/signup" component={SignUp} />       
             <Route path="/welcome" component={() => <Welcome data={this.state.data} onLogoutHandler={this.onLogoutHandler} />} />       
               <table>
@@ -133,7 +133,7 @@ export default class  App extends Component {
                     <td><Link to="/signup"><button id="signup" className="button-login" onClick={this.onSignUpHandler} >Sign Up</button></Link></td>
                   </tr>
                   <tr id="back" style={{display: 'none'}}>
-                    <td><Link to="/login-react"><i onClick={() => this.onClickHandler('login', 'back')} className="fa fa-arrow-circle-left" style={backStyle}></i></Link></td>
+                    <td><Link to="/"><i onClick={() => this.onClickHandler('login', 'back')} className="fa fa-arrow-circle-left" style={backStyle}></i></Link></td>
                   </tr>                  
                 </tbody>
               </table>        
