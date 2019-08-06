@@ -5,6 +5,11 @@ import SignUp from './SignUp';
 import Welcome from './Welcome';
 import './App.css';
 
+//https://i.ibb.co/xS79mqM/giphy.gif
+let nameReg = /^[a-zA-Z]*$/;
+let emailReg = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,4}$/;
+let dobReg = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+
 export default class  App extends Component {
 
   constructor(props) {
@@ -22,39 +27,44 @@ export default class  App extends Component {
     this.setState({currentPage: 0});
   }
 
-  onLoginHandler = (event) => {
-    let email = window['email'].value;
-    let password = window['password'].value;
-    let user = sessionStorage.getItem(email);
-    if(email === '' || password === '') {
-      window['message-box'].style.display = 'block';
-      if(email === '')
-        window['message-box'].innerHTML = 'All Fields Mandatory';      
-      else window['message-box'].innerHTML = 'Authentication Failed';
-      event.preventDefault();
-      return;
-    }
-    if(!user) {
-      window['message-box'].style.display = 'block';
-      window['message-box'].innerHTML = 'Authentication Failed';
-      event.preventDefault();
-      return;
-    }    
-    else {
-      let upassword = sessionStorage.getItem(email).split(':')[1];
-      if(password !== upassword) {
+    onLoginHandler = (event) => {
+      let email = window['email'].value;
+      let password = window['password'].value;
+      let user = sessionStorage.getItem(email);
+      if(email === '' || password === '') {
+        window['message-box'].style.display = 'block';
+        if(email === '')
+          window['message-box'].innerHTML = 'All Fields Mandatory';      
+        else window['message-box'].innerHTML = 'Authentication Failed';
+        event.preventDefault();
+        return;
+      }
+      if(!user) {
         window['message-box'].style.display = 'block';
         window['message-box'].innerHTML = 'Authentication Failed';
         event.preventDefault();
         return;
-      }
-    this.setState({data: [email]});
-    window['message-box'].style.display = 'none';
-    window['login'].style.display = 'none';
-    window['signup'].style.display = 'none';
-    document.body.style = 'background-image: url(\'home.jpg\')';
+      }    
+      else {
+        let upassword = sessionStorage.getItem(email).split(':')[1];
+        if(password !== upassword) {
+          window['message-box'].style.display = 'block';
+          window['message-box'].innerHTML = 'Authentication Failed';
+          event.preventDefault();
+          return;
+        }
+      this.setState({data: [email]});
+      sessionStorage.setItem('login', email);
+      window['message-box'].style.display = 'none';
+      window['login'].style.display = 'none';
+      window['signup'].style.display = 'none';
+    }
   }
-}
+
+  onLogoutHandler = () => {
+    sessionStorage.removeItem('login');
+    window.location.reload('/');
+  }
 
   onSignUpHandler = (event) => {
     window['message-box'].style.display = 'none';    
@@ -72,6 +82,21 @@ export default class  App extends Component {
         window['message-box'].style.display = 'block';
         window['message-box'].innerHTML = 'All Fields Mandatory';
         event.preventDefault();
+        return;
+      }
+      else if(!nameReg.test(name.value) || !emailReg.test(email.value) || !dobReg.test(dob.value)) {
+        if(!nameReg.test(name.value)) {
+          window['message-box'].style.display = 'block';
+          window['message-box'].innerHTML = 'Invalid Name';
+        }
+        else if(!emailReg.test(email.value)) {
+          window['message-box'].style.display = 'block';
+          window['message-box'].innerHTML = 'Invalid Email';
+        }
+        else if(!dobReg.test(dob.value)) {
+          window['message-box'].style.display = 'block';
+          window['message-box'].innerHTML = 'Invalid Birth Date';
+        }
         return;
       }
       let data = name.value+':'+password.value+':'+dob.value;
@@ -95,7 +120,7 @@ export default class  App extends Component {
           <div className="container-login">
             <Route exact path="/" component={Login} data={this.state.data} />       
             <Route path="/signup" component={SignUp} />       
-            <Route path="/welcome" component={() => <Welcome data={this.state.data} />} />       
+            <Route path="/welcome" component={() => <Welcome data={this.state.data} onLogoutHandler={this.onLogoutHandler} />} />       
               <table>
                 <tbody>
                   <tr>

@@ -1,11 +1,11 @@
 @font-face {
   font-family: Blanka;
-  src: url('Blanka.otf') format('opentype');
+  src: url('fonts/Blanka.otf') format('opentype');
 }
 
 @font-face {
   font-family: Ailerons;
-  src: url('Ailerons.otf') format('opentype');
+  src: url('fonts/Ailerons.otf') format('opentype');
 }
 
 body {
@@ -42,6 +42,63 @@ label {
   font-family: Ailerons;
   font-size: 0.8vw;
   letter-spacing: 0.2vw;
+}
+
+.add-input {
+  border-bottom: 1px solid rgb(97, 55, 0);
+  width: 70%;
+}
+.add-input::placeholder {
+  font-size: 1vw;
+}
+
+.btn-add-new {
+  background-color: rgb(43, 43, 43);
+  border: none;
+  color: rgb(180, 180, 180);
+  font-family: Ailerons;
+  font-size: 1.3vw;
+  margin-left: -2.60vw;
+  margin-top: 2vh;
+  opacity: 0.9;
+  padding: 0.2vw;
+  width: 36%;
+}
+
+.btn-add-to-list {
+  background-color: rgb(41, 41, 41);
+  border: none;
+  color: rgb(211, 211, 211);
+  font-family: Ailerons;
+  font-size: 1.3vw;
+  margin-top: 3vh;
+  padding: 0.25vw;
+  width: 70%
+}
+
+.btn-logout {
+  background-color: rgb(41, 41, 41);
+  border: none;
+  color: rgb(211, 211, 211);
+  font-family: Ailerons;
+  font-size: 1.3vw;
+  margin-top: 0.3vh;
+  margin-left: -2.5vw;
+  padding: 0.2vw;
+  width: 73%
+}
+
+.btn-view-list {
+  background-color: rgb(43, 43, 43);
+  border: none;
+  color: rgb(180, 180, 180);
+  font-family: Ailerons;
+  font-size: 1.3vw;
+  margin-left: 0.5vw;
+  margin-top: 2vh;
+  opacity: 0.9;
+  padding: 0.2vw;
+  width: 36%;
 }
 
 .button-back {
@@ -131,14 +188,87 @@ label {
   letter-spacing: 0.1vw;
 }
 
+.todo-add {
+  margin-top: -5vh;
+  margin-left: -2.3vw;
+  text-align: center;  
+}
+
+.todo-checkbox {
+  float: left;
+}
+
+.todo-container {
+  height: 60vh;
+  text-align: left;
+  margin-top: 3vh;
+  overflow: auto;  
+  width: 100%;
+}
+
+.todo-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.todo-item {
+  background-color: rgb(46, 46, 46);
+  border-radius: 0.4vw;
+  font-family: monospace; 
+  height: 6vh;
+  margin-top: 2vh;
+  opacity: 0.8;
+  width: 90%;
+}
+
+.todo-nav {
+  margin-top: 3vh;
+}
+
+.todo-title {  
+  font-size: 0.8vw;
+  float: left;
+  letter-spacing: 0.3vw;
+  margin-left: 0.5vw;
+  margin-top: 0.8vh;
+  width: 90%;
+}
+
+.todo-remove {  
+  background: inherit;
+  border: none;
+  color: rgb(168, 168, 168);
+  font-size: 1.1vw;
+  height: 6vh;
+  width: 8%;
+}
+
 .welcome-container {
   font-size: 1.5vw;
+  height: 70vh;  
   margin-left: -15vw;
+  margin-top: -5vw;
   width: 50vw;
 }
 
+.welcome-gif {  
+  border-radius: 40vw;
+  height: 40vh;
+  margin-left: -3vw;
+  margin-top: 8vh;
+  opacity: 0.6;
+  width: 20vw;
+}
+
+.welcome-hint {
+  font-size: 1.4vw;
+  font-family: Ailerons;
+  letter-spacing: 1.2vw;
+  margin-top: 8vh;
+  margin-left: -3vw;
+}
+
 .welcome-user {
-  color: rgb(39, 39, 39);
+  color: rgb(61, 61, 61);
 }
 
 ::placeholder {

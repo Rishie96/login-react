@@ -25,7 +25,7 @@ export default class SignUp extends Component {
                             </tr>
                             <tr>
                                 <td>
-                                    <input id="dob-signup" placeholder="Birth Date" type="text" />                                    
+                                    <input id="dob-signup" placeholder="Birth Date [DD-MM-YYY]" type="text" />                                    
                                 </td>
                             </tr>
                         </tbody>
