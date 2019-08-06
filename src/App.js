@@ -63,7 +63,7 @@ export default class  App extends Component {
 
   onLogoutHandler = () => {
     sessionStorage.removeItem('login');
-    window.location.reload('/login-react');
+    window.location.replace('/login-react');
   }
 
   onSignUpHandler = (event) => {
