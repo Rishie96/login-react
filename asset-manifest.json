@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/login-react/static/css/main.75b2bc96.chunk.css",
+    "main.js": "/login-react/static/js/main.14f8eab8.chunk.js",
+    "main.js.map": "/login-react/static/js/main.14f8eab8.chunk.js.map",
+    "runtime~main.js": "/login-react/static/js/runtime~main.6f10b612.js",
+    "runtime~main.js.map": "/login-react/static/js/runtime~main.6f10b612.js.map",
+    "static/js/2.1063ae7b.chunk.js": "/login-react/static/js/2.1063ae7b.chunk.js",
+    "static/js/2.1063ae7b.chunk.js.map": "/login-react/static/js/2.1063ae7b.chunk.js.map",
+    "index.html": "/login-react/index.html",
+    "precache-manifest.55b6846a7666c6073307784361ead389.js": "/login-react/precache-manifest.55b6846a7666c6073307784361ead389.js",
+    "service-worker.js": "/login-react/service-worker.js",
+    "static/css/main.75b2bc96.chunk.css.map": "/login-react/static/css/main.75b2bc96.chunk.css.map",
+    "static/media/index.css": "/login-react/static/media/Blanka.0f9bdc30.otf"
+  }
+}
