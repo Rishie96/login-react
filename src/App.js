@@ -133,7 +133,7 @@ export default class  App extends Component {
                     <td><Link to="/signup"><button id="signup" className="button-login" onClick={this.onSignUpHandler} >Sign Up</button></Link></td>
                   </tr>
                   <tr id="back" style={{display: 'none'}}>
-                    <td><Link to="/"><i onClick={() => this.onClickHandler('login', 'back')} className="fa fa-arrow-circle-left" style={backStyle}></i></Link></td>
+                    <td><Link to="/login-react"><i onClick={() => this.onClickHandler('login', 'back')} className="fa fa-arrow-circle-left" style={backStyle}></i></Link></td>
                   </tr>                  
                 </tbody>
               </table>        
