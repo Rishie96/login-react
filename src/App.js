@@ -118,7 +118,7 @@ export default class  App extends Component {
       <Router>
         <div className="container-main">
           <div className="container-login">
-            <Route exact path="/" component={Login} data={this.state.data} />       
+            <Route exact path="/login-react" component={Login} data={this.state.data} />       
             <Route path="/signup" component={SignUp} />       
             <Route path="/welcome" component={() => <Welcome data={this.state.data} onLogoutHandler={this.onLogoutHandler} />} />       
               <table>
