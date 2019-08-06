@@ -52,7 +52,7 @@ export default class Welcome extends Component {
 
     render() {
         if(!sessionStorage.getItem('login'))
-            window.location.replace('/');
+            window.location.replace('/login-react');
         return (
             <Router>
                 <div className="welcome-container">
