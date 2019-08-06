@@ -63,7 +63,7 @@ export default class  App extends Component {
 
   onLogoutHandler = () => {
     sessionStorage.removeItem('login');
-    window.location.reload('/');
+    window.location.reload('/login-react');
   }
 
   onSignUpHandler = (event) => {
@@ -106,7 +106,7 @@ export default class  App extends Component {
       window['message-box'].innerHTML = 'Registered, please wait';
       window['signup'].disabled = true;
       setTimeout(() => {        
-        window.location.replace('/');
+        window.location.replace('/login-react');
       }, 3000)
       currentPage = 0;
     }    
